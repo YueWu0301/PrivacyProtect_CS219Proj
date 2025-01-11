@@ -1,0 +1,462 @@
+<!DOCTYPE html><html><head>
+      <title>readme</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////root/.vscode-server/extensions/shd101wyy.markdown-preview-enhanced-0.8.15/crossnote/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="real-time-privacy-protection-tool">Real-Time Privacy Protection Tool </h1>
+<blockquote>
+<p>武岳 12112422 <a href="mailto:wuy2021@mail.sustech.edu.cn">wuy2021@mail.sustech.edu.cn</a> <a href="https://yuewu0301.github.io/">https://yuewu0301.github.io/</a></p>
+</blockquote>
+<h2 id="project-introduction">Project Introduction </h2>
+<p>This project aims to develop an efficient real-time privacy protection tool that utilizes C++ and OpenCV technologies. The tool captures video streams from a camera, performs real-time face detection and recognition. It provides multiple privacy protection modes, including blur (Blur), pixelation (Pixel), and mask overlay (Mask). Users can choose the appropriate protection mode based on their needs. In addition, users can dynamically adjust processing parameters and upload custom mask images to achieve personalized privacy protection effects.</p>
+<h2 id="environment-setup">Environment Setup </h2>
+<p>This project runs on WSL, using CMake, and utilizes OpenCV's Yunet for face detection. Although WSL2 supports the use of CUDA, it does not support camera access. Therefore, UDP is used for video file transfer. Moreover, WSL2 requires tools like X1 to enable visualization. Next, we will introduce the necessary packages and tools for this project.</p>
+<p>YuNet requires CMake ≥ 3.24.0. For updating CMake, refer to: <a href="https://blog.csdn.net/qq_37700257/article/details/131787671">https://blog.csdn.net/qq_37700257/article/details/131787671</a>. After downloading the compressed package from the official website, unzip it, and configure the environment via vim ~/.bashrc.</p>
+<p>YuNet requires OpenCV 4.10.0. If using the usual sudo installation, you will find that the version is too low, so manual installation is necessary. For specific instructions, refer to: <a href="https://blog.csdn.net/whitephantom1/article/details/136406214">https://blog.csdn.net/whitephantom1/article/details/136406214</a>. CMake is needed for compiling. You can store multiple versions of OpenCV on the same machine by following the guidance here: <a href="https://blog.csdn.net/sylin211/article/details/108997411">https://blog.csdn.net/sylin211/article/details/108997411</a>. You also need to update the environment variables via ~/.bashrc.</p>
+<p>For running graphical interfaces in WSL2, Windows needs to install VcXsrv. Specific installation instructions are available at: <a href="https://blog.csdn.net/Alisebeast/article/details/106680267">https://blog.csdn.net/Alisebeast/article/details/106680267</a>. After installation, type xclock in the WSL terminal to check if it displays correctly. I also wrote a display_test.cpp to verify if visualization works.</p>
+<p>For accessing the local camera, I chose to send the video stream via UDP to WSL. Open the Windows command prompt and type the following:</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>ffmpeg -f dshow -i video="Integrated Webcam" -preset ultrafast -tune zerolatency -vcodec libx264 -f mpegts udp://172.31.238.217:888 -fflags nobuffer -flush_packets 1 -r 30 -b:v 2M -maxrate 2M -bufsize 4M -analyzeduration 100000 -probesize 100000
+</code></pre><p>Here, the ffmpeg -f dshow -list_devices true -i dummy command can be used to list device names (in my case, the camera is called "Integrated Webcam"). You can check your local and WSL IP addresses using ipconfig/ifconfig. Note that the UDP address should be that of the WSL, and 888 is the port.</p>
+<p>From my personal experience, the -analyzeduration 100000 parameter sets the stream analysis duration to 100000 microseconds, helping the decoder better identify the stream format and codecs. Increasing this value can help handle unstable or complex streams and is recommended for stable video. The -probesize parameter affects the number of bytes FFmpeg uses to analyze stream data when reading the input stream. A larger value helps FFmpeg better determine the stream codec information, so it is advisable to increase this value.</p>
+<h2 id="model-construction">Model Construction </h2>
+<p>After setting up the environment, you can call YuNet. The specific repository can be found here: <a href="https://github.com/opencv/opencv_zoo/tree/main/models/face_detection_yunet">https://github.com/opencv/opencv_zoo/tree/main/models/face_detection_yunet</a>. I also wrote a model_test.cpp to test whether the model can be invoked successfully.</p>
+<p>Note that the ONNX file downloaded from the repository is a pointer file. Directly calling it will result in a Failed to parse onnx model in function 'ONNXImporter' error. You need to git clone opencv_zoo and then use git lfs to download the specific ONNX model. For issues related to model recognition, see: <a href="https://github.com/opencv/opencv_zoo/issues/31">https://github.com/opencv/opencv_zoo/issues/31</a>.</p>
+<h3 id="1-real-time-face-detection">1. Real-time Face Detection: </h3>
+<p>First, I created a YuNet class that is responsible for loading the face detection model and performing inference. This class contains an infer method that takes a frame (in cv::Mat format) as input and returns a matrix (also in cv::Mat format) containing information about the detected faces. Each row in this matrix corresponds to one detected face and contains four values: x, y, w, and h. These values represent the top-left coordinates of the face bounding box, as well as the width (w) and height (h), which define the dimensions of the detected face's bounding box.</p>
+<p>To draw the face bounding boxes, I created a drawFaceBoxes method that visualizes the detected faces based on the information returned by the infer method. Each row in the faces matrix represents the coordinates of a detected face, where x, y, w, and h indicate the top-left corner and dimensions of the bounding box (width and height). Using these coordinates, I utilized the cv::rectangle method to draw a green rectangle around each detected face on the original image, highlighting the regions where faces are located.</p>
+<p>Real-time rendering: In the main function, I initialized the face detection model and set command-line parameters. Then, I used cv::VideoCapture to read video frames from the UDP stream (frame). Each frame is processed by the infer method, which detects faces in the image. The detection result (faces) is passed to the drawFaceBoxes method to draw face boxes on the video frame. The processed frame is then displayed using cv::imshow, achieving real-time face detection and display.</p>
+<p>By continuously reading video frames from the UDP stream and performing real-time face detection using the YuNet model, the program draws bounding boxes around the faces and displays the result.</p>
+<p><img src="image.png" alt="alt text"></p>
+<p>You can see here that the faces are detected and marked in real-time. The top-left corner shows the current status of blur and pixelation strength.</p>
+<h3 id="2-privacy-protection-modes">2. Privacy Protection Modes </h3>
+<p>I created a function applyPrivacyMode to implement privacy protection. The input consists of the original image, face coordinates, and privacy protection mode (blur for blur, pixel for pixelation, and mask for overlay).</p>
+<p>For blur, I set the blur kernel size and used GaussianBlur to blur the region inside the face box. The kernel size must be odd, so I ensured it by adjusting the kernel size as int adjusted_kernel_size = std::max(3, blur_kernel_size | 1).</p>
+<p>For pixel, I defined the pixel size, then resized the face area smaller before enlarging it back to its original size to achieve pixelation. I used INTER_NEAREST to implement nearest-neighbor interpolation to achieve the pixelation effect.</p>
+<p>For mask, I first defined the image mask, loaded the image, resized the mask to fit the detected face area, and converted it to BGR format. Then, I copied the mask image into the original image's face detection box to overlay the mask.</p>
+<p>Afterwards, in the while true loop, I set the current privacy mode and used this method to process each video frame, thus achieving privacy protection for the frame.</p>
+<h3 id="3--4-dynamic-parameter-adjustment-and-mode-switching">3 &amp; 4. Dynamic Parameter Adjustment and Mode Switching </h3>
+<p>First, I set up a method setNonBlockingInput using fcntl and read to implement non-blocking input. This allows the program to receive user input in real-time without blocking the main thread, which handles video capture and face detection.</p>
+<p>In the while true loop, I used:</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>char input;
+ssize_t bytes_read = read(STDIN_FILENO, &amp;input, 1);
+</code></pre><p>to read one character from standard input and store it in input. Based on the input, I could dynamically adjust parameters. For example, pressing 1, 2, or 3 would switch between blur, pixel, and mask modes. After switching modes, the program would call applyPrivacyMode in the next loop to apply the selected privacy mode.</p>
+<p>By reading ] or [, when in pixel or blur mode, I could increment or decrement the respective blur and pixel sizes. This would take effect in the next loop, enabling dynamic parameter adjustments.</p>
+<p><img src="image-1.png" alt="alt text"></p>
+<p><img src="image-2.png" alt="alt text"></p>
+<p><img src="image-3.png" alt="alt text"></p>
+<p>As you can see here, the program displays the current privacy mode, blur strength, and pixel size, which can be adjusted dynamically.</p>
+<h3 id="5-uploading-the-mask-image">5. Uploading the Mask Image </h3>
+<p>Similarly, when we press 'u', it is recognized as a command to upload a new image. However, since only one character is detected at a time and the image path is a string, I implemented the following approach:</p>
+<p>In the main function, I defined a bool waitingForInput variable outside of the while true loop to indicate whether the program is currently waiting for the new image address. When the program detects the character 'u', it sets this variable to true (which is false by default).</p>
+<p>Inside the loop, if waitingForInput is true, I start recording the subsequent input, appending each character to a string until a carriage return (\r) or newline (\n) character is encountered. At that point, I consider the string as the complete image path, attempt to read the image, and if successful, replace the original mask image with the new one.</p>
+<p><img src="image-6.png" alt="alt text"><br>
+press u to input pictures' address, we correctly change the mask picture to miaowazhongzi.</p>
+<h3 id="running-instructions-command-line-arguments">Running Instructions Command-line Arguments </h3>
+<p>You can construct the relevant code in the main function. I created a function called print_usage to remind users of the correct input format in case of an error.</p>
+<p><img src="image-4.png" alt="alt text"><br>
+The code could provide correct information if you input incorrect argument.</p>
+<p>After you input: /build/privacy_protector  -mode blur -blur_size 20<br>
+<img src="image-5.png" alt="alt text"><br>
+We successfully change the mode to Blur and set the blur number to 20.</p>
+<h2 id="code-implementation">Code Implementation </h2>
+<p>The full code has been uploaded to: <a href="https://github.com/YueWu0301/PrivacyProtect_CS219Proj">https://github.com/YueWu0301/PrivacyProtect_CS219Proj</a></p>
+<p>You can also visit my website: <a href="https://yuewu0301.github.io/projects/">https://yuewu0301.github.io/projects/</a></p>
+<p>Below is the complete code:</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>#include &lt;opencv2/opencv.hpp&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;cstdlib&gt;
+
+enum PrivacyMode { NONE, BLUR, PIXEL, MASK };
+// 用于初始化时的提醒，纠错，etc
+void print_usage(const std::string&amp; program_name) { 
+    std::cerr &lt;&lt; "Usage: " &lt;&lt; program_name &lt;&lt; " [-mode mode] [-blur_size blur_size] [-pixel_size pixel_size] [-mask_image mask_image]" &lt;&lt; std::endl;
+    std::cerr &lt;&lt; "  -mode &lt;mode&gt;       : Set the initial mode (blur, pixel, mask). Default is 'blur'." &lt;&lt; std::endl;
+    std::cerr &lt;&lt; "  -blur_size &lt;size&gt;  : Set the blur kernel size (only valid in 'blur' mode)." &lt;&lt; std::endl;
+    std::cerr &lt;&lt; "  -pixel_size &lt;size&gt; : Set the pixel size (only valid in 'pixel' mode)." &lt;&lt; std::endl;
+    std::cerr &lt;&lt; "  -mask_image &lt;path&gt; : Set the mask image path (only valid in 'mask' mode)." &lt;&lt; std::endl;
+}
+
+
+// 调用YuNet
+class YuNet {
+public:
+    YuNet(const std::string &amp;model_path,
+          const cv::Size &amp;input_size = cv::Size(320, 320),
+          float conf_threshold = 0.6f, //人脸检测的置信度阈值
+          float nms_threshold = 0.3f,
+          int top_k = 5000,
+          int backend_id = 0,
+          int target_id = 0)
+        : model_path_(model_path), input_size_(input_size),
+          conf_threshold_(conf_threshold), nms_threshold_(nms_threshold),
+          top_k_(top_k), backend_id_(backend_id), target_id_(target_id) {
+        model = cv::FaceDetectorYN::create(model_path_, "", input_size_, conf_threshold_, nms_threshold_, top_k_, backend_id_, target_id_);
+    }
+
+    void setInputSize(const cv::Size &amp;input_size) {
+        input_size_ = input_size;
+        model-&gt;setInputSize(input_size_);
+    }
+
+    cv::Mat infer(const cv::Mat &amp;image) {
+        cv::Mat res;
+        model-&gt;detect(image, res);
+        return res;
+    }
+
+private:
+    cv::Ptr&lt;cv::FaceDetectorYN&gt; model;
+    std::string model_path_;
+    cv::Size input_size_;
+    float conf_threshold_;
+    float nms_threshold_;
+    int top_k_;
+    int backend_id_;
+    int target_id_;
+};
+
+void drawFaceBoxes(cv::Mat &amp;image, const cv::Mat &amp;faces) {
+    for (int i = 0; i &lt; faces.rows; ++i) {
+        int x1 = static_cast&lt;int&gt;(faces.at&lt;float&gt;(i, 0));
+        int y1 = static_cast&lt;int&gt;(faces.at&lt;float&gt;(i, 1));
+        int w = static_cast&lt;int&gt;(faces.at&lt;float&gt;(i, 2));
+        int h = static_cast&lt;int&gt;(faces.at&lt;float&gt;(i, 3));
+
+        // 绘制人脸框
+        cv::rectangle(image, cv::Rect(x1, y1, w, h), cv::Scalar(0, 255, 0), 2);
+    }
+}
+
+
+cv::Mat applyPrivacyMode(cv::Mat image, const cv::Mat &amp;faces, int blur_kernel_size, int pixel_size, cv::Mat &amp;mask_img, PrivacyMode mode) {
+    auto output_image = image.clone();
+
+    for (int i = 0; i &lt; faces.rows; ++i) {
+        int x1 = static_cast&lt;int&gt;(faces.at&lt;float&gt;(i, 0));
+        int y1 = static_cast&lt;int&gt;(faces.at&lt;float&gt;(i, 1));
+        int w = static_cast&lt;int&gt;(faces.at&lt;float&gt;(i, 2));
+        int h = static_cast&lt;int&gt;(faces.at&lt;float&gt;(i, 3));
+
+        // 确保区域在图像范围内
+        cv::Rect face_rect(x1, y1, w, h);
+        face_rect &amp;= cv::Rect(0, 0, image.cols, image.rows);
+
+        switch (mode) {
+            case BLUR: {
+                int adjusted_kernel_size = std::max(3, blur_kernel_size | 1);
+                cv::GaussianBlur(output_image(face_rect), output_image(face_rect), cv::Size(adjusted_kernel_size, adjusted_kernel_size), 0);
+                break;
+            }
+            case PIXEL: {
+                cv::Mat pixelated = output_image(face_rect);
+                cv::resize(pixelated, pixelated, cv::Size(pixelated.cols / pixel_size, pixelated.rows / pixel_size));
+                cv::resize(pixelated, output_image(face_rect), face_rect.size(), 0, 0, cv::INTER_NEAREST);
+                break;
+            }
+            case MASK: {
+                if (!mask_img.empty()) {
+                    cv::Mat mask_resized;
+                    cv::resize(mask_img, mask_resized, cv::Size(w, h));
+
+                    // 检查并调整通道数，确保与视频帧匹配
+                    if (mask_resized.channels() == 1) {
+                        // 灰度图转换为 BGR
+                        cv::cvtColor(mask_resized, mask_resized, cv::COLOR_GRAY2BGR);
+                    } else if (mask_resized.channels() == 4) {
+                        // RGBA 转换为 BGR
+                        cv::cvtColor(mask_resized, mask_resized, cv::COLOR_BGRA2BGR);
+                    }
+
+                    // 将遮罩图片复制到目标区域
+                    mask_resized.copyTo(output_image(face_rect));
+                }
+                break;
+            }
+            default:
+                break;
+        }
+    }
+
+    return output_image;
+}
+
+bool waitingForInput = false; // 标记是否等待用户输入路径
+std::string new_mask_path = ""; // 新的遮罩路径
+
+void setNonBlockingInput() {
+    int flags = fcntl(STDIN_FILENO, F_GETFL, 0);
+    fcntl(STDIN_FILENO, F_SETFL, flags | O_NONBLOCK);
+}
+
+int main(int argc, char *argv[]) {
+    // 默认参数
+    PrivacyMode mode = NONE;  // 默认是普通模式
+    int blur_kernel_size = 15;
+    int pixel_size = 10;
+    std::string mask_image_path = "kedaya.png";  // 默认遮罩图片路径
+
+    // 解析命令行参数
+    for (int i = 1; i &lt; argc; ++i) {
+        std::string arg = argv[i];
+
+        // 处理 -mode 或 -m 参数
+        if (arg == "-mode" || arg == "-m") {
+            if (i + 1 &lt; argc) {
+                std::string mode_str = argv[++i];
+                if (mode_str == "blur") {
+                    mode = BLUR;
+                } else if (mode_str == "pixel") {
+                    mode = PIXEL;
+                } else if (mode_str == "mask") {
+                    mode = MASK;
+                } else {
+                    std::cerr &lt;&lt; "Invalid mode: " &lt;&lt; mode_str &lt;&lt; ". Valid options are 'blur', 'pixel', or 'mask'." &lt;&lt; std::endl;
+                    return -1;
+                }
+            } else {
+                std::cerr &lt;&lt; "Error: -mode requires an argument." &lt;&lt; std::endl;
+                return -1;
+            }
+        }
+        // 处理 -blur_size 或 -b 参数
+        else if (arg == "-blur_size" || arg == "-b") {
+            if (mode != BLUR) {
+                std::cerr &lt;&lt; "Error: -blur_size is only valid when -mode is set to 'blur'." &lt;&lt; std::endl;
+                return -1;
+            }
+            if (i + 1 &lt; argc) {
+                blur_kernel_size = std::stoi(argv[++i]);
+            } else {
+                std::cerr &lt;&lt; "Error: -blur_size requires an argument." &lt;&lt; std::endl;
+                return -1;
+            }
+        }
+        // 处理 -pixel_size 或 -p 参数
+        else if (arg == "-pixel_size" || arg == "-p") {
+            if (mode != PIXEL) {
+                std::cerr &lt;&lt; "Error: -pixel_size is only valid when -mode is set to 'pixel'." &lt;&lt; std::endl;
+                return -1;
+            }
+            if (i + 1 &lt; argc) {
+                pixel_size = std::stoi(argv[++i]);
+            } else {
+                std::cerr &lt;&lt; "Error: -pixel_size requires an argument." &lt;&lt; std::endl;
+                return -1;
+            }
+        }
+        // 处理 -mask_image 或 -i 参数
+        else if (arg == "-mask_image" || arg == "-i") {
+            if (mode != MASK) {
+                std::cerr &lt;&lt; "Error: -mask_image is only valid when -mode is set to 'mask'." &lt;&lt; std::endl;
+                return -1;
+            }
+            if (i + 1 &lt; argc) {
+                mask_image_path = argv[++i];
+            } else {
+                std::cerr &lt;&lt; "Error: -mask_image requires an argument." &lt;&lt; std::endl;
+                return -1;
+            }
+        }
+        // 无效参数
+        else {
+            std::cerr &lt;&lt; "Unknown argument: " &lt;&lt; arg &lt;&lt; std::endl;
+            print_usage(argv[0]);
+            return -1;
+        }
+    }
+
+    // 输出当前设置的参数
+    std::cout &lt;&lt; "Mode: " &lt;&lt; (mode == BLUR ? "Blur" : mode == PIXEL ? "Pixel" : mode == MASK ? "Mask" : "None") &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Blur Size: " &lt;&lt; blur_kernel_size &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Pixel Size: " &lt;&lt; pixel_size &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Mask Image Path: " &lt;&lt; mask_image_path &lt;&lt; std::endl;
+
+    std::string udp_stream = "udp://localhost:888?fifo_size=5000000&amp;analyzeduration=1000000&amp;probesize=1000000";
+
+    // 加载遮罩图片
+    cv::Mat mask_img = cv::imread(mask_image_path, cv::IMREAD_UNCHANGED);
+    if (mask_img.empty()) {
+        std::cout &lt;&lt; "无法加载遮罩图片：" &lt;&lt; mask_image_path &lt;&lt; std::endl;
+        return -1;
+    }
+
+    // 设置非阻塞输入
+    setNonBlockingInput();
+
+    // 模型路径
+    std::string model_path = "face_detection_yunet_2023mar.onnx";
+    YuNet model(model_path, cv::Size(320, 320), 0.6, 0.3, 5000, cv::dnn::DNN_BACKEND_OPENCV, cv::dnn::DNN_TARGET_CPU);
+
+    // 打开 UDP 流
+    cv::VideoCapture stream(udp_stream, cv::CAP_FFMPEG);
+    if (!stream.isOpened()) {
+        std::cout &lt;&lt; "无法打开 UDP 流。" &lt;&lt; std::endl;
+        return -1;
+    }
+
+    cv::Mat frame;
+    cv::namedWindow("Privacy Protector", cv::WINDOW_AUTOSIZE);
+
+    bool waitingForInput = false;
+    std::string new_mask_path;
+    int enter_count = 0;
+
+    while (true) {
+        // 读取 UDP 流帧
+        if (!stream.read(frame)) {
+            std::cout &lt;&lt; "无法读取视频帧，退出。" &lt;&lt; std::endl;
+            break;
+        }
+
+        // 设置输入大小
+        model.setInputSize(frame.size());
+
+        // 检测人脸
+        cv::Mat faces = model.infer(frame);
+
+
+        
+
+        if (mode == NONE) {
+            // 默认模式：标记人脸框
+            drawFaceBoxes(frame, faces);
+        } else {
+            // 根据模式应用隐私保护
+            frame = applyPrivacyMode(frame, faces, blur_kernel_size, pixel_size, mask_img, mode);
+        }
+        // if (faces.empty()) {
+        // // 显示原始视频流
+        // std::string mode_text = (mode == NONE ? "None" : mode == BLUR ? "Blur" : mode == PIXEL ? "Pixel" : "Mask");
+        // std::string text = "Mode: " + mode_text + " | Blur: " + std::to_string(blur_kernel_size) + " | Pixel: " + std::to_string(pixel_size);
+        // cv::putText(frame, text, cv::Point(10, 30), cv::FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255, 255, 255), 2);
+        // cv::imshow("Privacy Protector", frame);
+        // } else {
+        // // 检测到人脸时，应用隐私保护模式
+        //     if (mode == NONE) {
+        //     // 默认模式：标记人脸框
+        //     drawFaceBoxes(frame, faces);
+        // } else {
+        //     // 根据模式应用隐私保护
+        //     frame = applyPrivacyMode(frame, faces, blur_kernel_size, pixel_size, mask_img, mode);
+        // }
+        // }
+
+
+
+
+
+
+        // 显示当前模式和参数
+        std::string mode_text = (mode == NONE ? "None" : mode == BLUR ? "Blur" : mode == PIXEL ? "Pixel" : "Mask");
+        std::string text = "Mode: " + mode_text + " | Blur: " + std::to_string(blur_kernel_size) + " | Pixel: " + std::to_string(pixel_size);
+        cv::putText(frame, text, cv::Point(10, 30), cv::FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255, 255, 255), 2);
+
+        cv::imshow("Privacy Protector", frame);
+
+        // 检测命令行输入
+        char input;
+        ssize_t bytes_read = read(STDIN_FILENO, &amp;input, 1);
+        if (bytes_read &gt; 0) {
+            // 处理输入
+            if (waitingForInput) {
+                // 处理换行符
+                if (input == '\n' || input == '\r') {
+                    enter_count++;
+                    if (enter_count == 1) {
+                        new_mask_path.clear();
+                    } else if (enter_count == 2) {
+                        std::cout &lt;&lt; "路径输入完成: " &lt;&lt; new_mask_path &lt;&lt; std::endl;
+
+                        // 加载新的遮罩图片
+                        cv::Mat new_mask_img = cv::imread(new_mask_path, cv::IMREAD_UNCHANGED);
+                        if (new_mask_img.empty()) {
+                            std::cout &lt;&lt; "无法加载遮罩图片：" &lt;&lt; new_mask_path &lt;&lt; std::endl;
+                        } else {
+                            mask_img = new_mask_img;
+                            std::cout &lt;&lt; "成功加载遮罩图片：" &lt;&lt; new_mask_path &lt;&lt; std::endl;
+                        }
+
+                        waitingForInput = false;
+                        new_mask_path.clear();
+                        enter_count = 0;
+                    }
+                } else {
+                    new_mask_path += input;
+                }
+            }
+
+            // 切换模式
+            if (input == 'u') {
+                waitingForInput = true;
+                enter_count = 0;
+                std::cout &lt;&lt; "请输入图片地址: " &lt;&lt; std::endl;
+            }
+
+            // 切换模式
+            
+            if (input == '1') {
+                mode = BLUR;
+                std::cout &lt;&lt; "切换到模糊模式" &lt;&lt; std::endl;
+            } else if (input == '2') {
+                mode = PIXEL;
+                std::cout &lt;&lt; "切换到像素化模式" &lt;&lt; std::endl;
+            } else if (input == '3') {
+                mode = MASK;
+                std::cout &lt;&lt; "切换到遮罩模式" &lt;&lt; std::endl;
+            } else if (input == '0') {
+                mode = NONE;
+                std::cout &lt;&lt; "关闭所有模式" &lt;&lt; std::endl;
+            }else if (input == 27) { // ESC 键退出
+                break;
+            } else if (input == '[') { // 减小模糊核或像素块大小
+                if (mode == BLUR &amp;&amp; blur_kernel_size &gt; 3) blur_kernel_size -= 2;
+                if (mode == PIXEL &amp;&amp; pixel_size &gt; 1) pixel_size -= 1;
+            } else if (input == ']') { // 增大模糊核或像素块大小
+                if (mode == BLUR) blur_kernel_size += 2;
+                if (mode == PIXEL) pixel_size += 1;
+            }
+        }
+        char key = cv::waitKey(1);
+
+    }
+
+    cv::destroyAllWindows();
+    return 0;
+}
+
+</code></pre>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

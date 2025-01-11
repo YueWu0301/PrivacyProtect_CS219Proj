@@ -1,117 +1,3 @@
-# Real-Time Privacy Protection Tool 
-
->   武岳 12112422 wuy2021@mail.sustech.edu.cn https://yuewu0301.github.io/
-
-## Project Introduction
-
-This project aims to develop an efficient real-time privacy protection tool that utilizes C++ and OpenCV technologies. The tool captures video streams from a camera, performs real-time face detection and recognition. It provides multiple privacy protection modes, including blur (Blur), pixelation (Pixel), and mask overlay (Mask). Users can choose the appropriate protection mode based on their needs. In addition, users can dynamically adjust processing parameters and upload custom mask images to achieve personalized privacy protection effects.
-
-## Environment Setup
-This project runs on WSL, using CMake, and utilizes OpenCV's Yunet for face detection. Although WSL2 supports the use of CUDA, it does not support camera access. Therefore, UDP is used for video file transfer. Moreover, WSL2 requires tools like X1 to enable visualization. Next, we will introduce the necessary packages and tools for this project.
-
-YuNet requires CMake ≥ 3.24.0. For updating CMake, refer to: https://blog.csdn.net/qq_37700257/article/details/131787671. After downloading the compressed package from the official website, unzip it, and configure the environment via vim ~/.bashrc.
-
-YuNet requires OpenCV 4.10.0. If using the usual sudo installation, you will find that the version is too low, so manual installation is necessary. For specific instructions, refer to: https://blog.csdn.net/whitephantom1/article/details/136406214. CMake is needed for compiling. You can store multiple versions of OpenCV on the same machine by following the guidance here: https://blog.csdn.net/sylin211/article/details/108997411. You also need to update the environment variables via ~/.bashrc.
-
-For running graphical interfaces in WSL2, Windows needs to install VcXsrv. Specific installation instructions are available at: https://blog.csdn.net/Alisebeast/article/details/106680267. After installation, type xclock in the WSL terminal to check if it displays correctly. I also wrote a display_test.cpp to verify if visualization works.
-
-For accessing the local camera, I chose to send the video stream via UDP to WSL. Open the Windows command prompt and type the following:
-
-```
-ffmpeg -f dshow -i video="Integrated Webcam" -preset ultrafast -tune zerolatency -vcodec libx264 -f mpegts udp://172.31.238.217:888 -fflags nobuffer -flush_packets 1 -r 30 -b:v 2M -maxrate 2M -bufsize 4M -analyzeduration 100000 -probesize 100000
-```
-Here, the ffmpeg -f dshow -list_devices true -i dummy command can be used to list device names (in my case, the camera is called "Integrated Webcam"). You can check your local and WSL IP addresses using ipconfig/ifconfig. Note that the UDP address should be that of the WSL, and 888 is the port.
-
-From my personal experience, the -analyzeduration 100000 parameter sets the stream analysis duration to 100000 microseconds, helping the decoder better identify the stream format and codecs. Increasing this value can help handle unstable or complex streams and is recommended for stable video. The -probesize parameter affects the number of bytes FFmpeg uses to analyze stream data when reading the input stream. A larger value helps FFmpeg better determine the stream codec information, so it is advisable to increase this value.
-
-## Model Construction
-After setting up the environment, you can call YuNet. The specific repository can be found here: https://github.com/opencv/opencv_zoo/tree/main/models/face_detection_yunet. I also wrote a model_test.cpp to test whether the model can be invoked successfully.
-
-Note that the ONNX file downloaded from the repository is a pointer file. Directly calling it will result in a Failed to parse onnx model in function 'ONNXImporter' error. You need to git clone opencv_zoo and then use git lfs to download the specific ONNX model. For issues related to model recognition, see: https://github.com/opencv/opencv_zoo/issues/31.
-
-### 1. Real-time Face Detection: 
-First, I created a YuNet class that is responsible for loading the face detection model and performing inference. This class contains an infer method that takes a frame (in cv::Mat format) as input and returns a matrix (also in cv::Mat format) containing information about the detected faces. Each row in this matrix corresponds to one detected face and contains four values: x, y, w, and h. These values represent the top-left coordinates of the face bounding box, as well as the width (w) and height (h), which define the dimensions of the detected face's bounding box.
-
-To draw the face bounding boxes, I created a drawFaceBoxes method that visualizes the detected faces based on the information returned by the infer method. Each row in the faces matrix represents the coordinates of a detected face, where x, y, w, and h indicate the top-left corner and dimensions of the bounding box (width and height). Using these coordinates, I utilized the cv::rectangle method to draw a green rectangle around each detected face on the original image, highlighting the regions where faces are located.
-
-
-Real-time rendering: In the main function, I initialized the face detection model and set command-line parameters. Then, I used cv::VideoCapture to read video frames from the UDP stream (frame). Each frame is processed by the infer method, which detects faces in the image. The detection result (faces) is passed to the drawFaceBoxes method to draw face boxes on the video frame. The processed frame is then displayed using cv::imshow, achieving real-time face detection and display.
-
-By continuously reading video frames from the UDP stream and performing real-time face detection using the YuNet model, the program draws bounding boxes around the faces and displays the result.
-
-![alt text](readme_source/image.png)
-
-You can see here that the faces are detected and marked in real-time. The top-left corner shows the current status of blur and pixelation strength.
-
-### 2. Privacy Protection Modes
-I created a function applyPrivacyMode to implement privacy protection. The input consists of the original image, face coordinates, and privacy protection mode (blur for blur, pixel for pixelation, and mask for overlay).
-
-For blur, I set the blur kernel size and used GaussianBlur to blur the region inside the face box. The kernel size must be odd, so I ensured it by adjusting the kernel size as int adjusted_kernel_size = std::max(3, blur_kernel_size | 1).
-
-For pixel, I defined the pixel size, then resized the face area smaller before enlarging it back to its original size to achieve pixelation. I used INTER_NEAREST to implement nearest-neighbor interpolation to achieve the pixelation effect.
-
-For mask, I first defined the image mask, loaded the image, resized the mask to fit the detected face area, and converted it to BGR format. Then, I copied the mask image into the original image's face detection box to overlay the mask.
-
-Afterwards, in the while true loop, I set the current privacy mode and used this method to process each video frame, thus achieving privacy protection for the frame.
-
-### 3 & 4. Dynamic Parameter Adjustment and Mode Switching
-First, I set up a method setNonBlockingInput using fcntl and read to implement non-blocking input. This allows the program to receive user input in real-time without blocking the main thread, which handles video capture and face detection.
-
-In the while true loop, I used:
-
-```
-char input;
-ssize_t bytes_read = read(STDIN_FILENO, &input, 1);
-```
-to read one character from standard input and store it in input. Based on the input, I could dynamically adjust parameters. For example, pressing 1, 2, or 3 would switch between blur, pixel, and mask modes. After switching modes, the program would call applyPrivacyMode in the next loop to apply the selected privacy mode.
-
-By reading ] or [, when in pixel or blur mode, I could increment or decrement the respective blur and pixel sizes. This would take effect in the next loop, enabling dynamic parameter adjustments.
-
-![alt text](readme_source/image-1.png)
-
-
-![alt text](readme_source/image-2.png)
-
-![alt text](readme_source/image-3.png)
-
-As you can see here, the program displays the current privacy mode, blur strength, and pixel size, which can be adjusted dynamically.
-
-
-
-
-### 5. Uploading the Mask Image
-Similarly, when we press 'u', it is recognized as a command to upload a new image. However, since only one character is detected at a time and the image path is a string, I implemented the following approach:
-
-In the main function, I defined a bool waitingForInput variable outside of the while true loop to indicate whether the program is currently waiting for the new image address. When the program detects the character 'u', it sets this variable to true (which is false by default).
-
-Inside the loop, if waitingForInput is true, I start recording the subsequent input, appending each character to a string until a carriage return (\r) or newline (\n) character is encountered. At that point, I consider the string as the complete image path, attempt to read the image, and if successful, replace the original mask image with the new one.
-
-
-![alt text](readme_source/image-6.png)
-press u to input pictures' address, we correctly change the mask picture to miaowazhongzi.
-
-
-### Running Instructions Command-line Arguments
-You can construct the relevant code in the main function. I created a function called print_usage to remind users of the correct input format in case of an error.
-
-
-
-![alt text](readme_source/image-4.png)
-The code could provide correct information if you input incorrect argument.
-
-After you input: /build/privacy_protector  -mode blur -blur_size 20 
-![alt text](readme_source/image-5.png)
-We successfully change the mode to Blur and set the blur number to 20.
-
-
-## Code Implementation
-The full code has been uploaded to: https://github.com/YueWu0301/PrivacyProtect_CS219Proj
-
-You can also visit my website: https://yuewu0301.github.io/projects/
-
-Below is the complete code:
-
-```
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <string>
@@ -246,7 +132,7 @@ int main(int argc, char *argv[]) {
     PrivacyMode mode = NONE;  // 默认是普通模式
     int blur_kernel_size = 15;
     int pixel_size = 10;
-    std::string mask_image_path = "kedaya.png";  // 默认遮罩图片路径
+    std::string mask_image_path = "pika.png";  // 默认遮罩图片路径
 
     // 解析命令行参数
     for (int i = 1; i < argc; ++i) {
@@ -476,5 +362,3 @@ int main(int argc, char *argv[]) {
     cv::destroyAllWindows();
     return 0;
 }
-
-```
